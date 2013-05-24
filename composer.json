@@ -1,0 +1,22 @@
+{
+    "name": "fxrm/seed",
+    "authors": [
+        {
+            "name": "Nick Matantsev",
+            "email": "unframework@github.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "TodoApp": "src/"
+        }
+    },
+    "require": {
+        "fxrm/action": "dev-master",
+        "fxrm/store": "dev-master"
+    },
+    "repositories": [
+        { "type": "vcs", "url": "git@github.com:unframework/fxrm-action.git" },
+        { "type": "vcs", "url": "git@github.com:unframework/fxrm-store.git" }
+    ]
+}

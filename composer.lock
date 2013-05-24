@@ -1,0 +1,92 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "4645a4db738242ef0c967106c2d95ddb",
+    "packages": [
+        {
+            "name": "fxrm/action",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unframework/fxrm-action.git",
+                "reference": "843a14706284e03b77562ac41bfd63751975e17c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unframework/fxrm-action/zipball/843a14706284e03b77562ac41bfd63751975e17c",
+                "reference": "843a14706284e03b77562ac41bfd63751975e17c",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Fxrm": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Nick Matantsev",
+                    "email": "unframework@github.com"
+                }
+            ],
+            "description": "Framework-agnostic form renderer and handler",
+            "support": {
+                "source": "https://github.com/unframework/fxrm-action/tree/master",
+                "issues": "https://github.com/unframework/fxrm-action/issues"
+            },
+            "time": "2013-06-08 04:46:26"
+        },
+        {
+            "name": "fxrm/store",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unframework/fxrm-store.git",
+                "reference": "4c8e9faef9312d9db86383e048355c2bc30946ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unframework/fxrm-store/zipball/4c8e9faef9312d9db86383e048355c2bc30946ea",
+                "reference": "4c8e9faef9312d9db86383e048355c2bc30946ea",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Fxrm": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Nick Matantsev",
+                    "email": "unframework@github.com"
+                }
+            ],
+            "description": "Framework-agnostic storage implementation",
+            "support": {
+                "source": "https://github.com/unframework/fxrm-store/tree/master",
+                "issues": "https://github.com/unframework/fxrm-store/issues"
+            },
+            "time": "2013-06-08 04:58:04"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "fxrm/action": 20,
+        "fxrm/store": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
