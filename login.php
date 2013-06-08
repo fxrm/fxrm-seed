@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 require(__DIR__ . '/vendor/autoload.php');
 
 $db = new \Fxrm\Store\SQLiteBackend('sqlite:test.db');
-$app = \Fxrm\Store\Storable::implement('\\TodoApp\\Application', $db, array());
+$app = \Fxrm\Store\Storable::implement('\\TodoApp\\Application', $db);
 
 $form = new \Fxrm\Action\Form($app, 'login');
 

@@ -7,10 +7,10 @@ require(__DIR__ . '/vendor/autoload.php');
 $db = new \Fxrm\Store\SQLiteBackend('sqlite:test.db');
 
 $hasSession = isset($_GET['session']);
-$appClass = $hasSession ? '\\TodoApp\\LoggedInApplication' : '\\TodoApp\\Application';
-$appArgs = $hasSession ? array($_GET['session']) : array();
 
-$app = \Fxrm\Store\Storable::implement($appClass, $db, $appArgs);
+$app = $hasSession ?
+        \Fxrm\Store\Storable::implement('\\TodoApp\\LoggedInApplication', $db, $_GET['session']) :
+        \Fxrm\Store\Storable::implement('\\TodoApp\\Application', $db);
 
 \Fxrm\Action\Handler::invoke($app, function ($className, $v) use($app) {
     if ($className === 'TodoApp\\Email') {
