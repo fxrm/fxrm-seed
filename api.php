@@ -5,12 +5,13 @@ ini_set('display_errors', 1);
 require(__DIR__ . '/vendor/autoload.php');
 
 $db = new \Fxrm\Store\SQLiteBackend('sqlite:test.db');
+$storable = new \Fxrm\Store\Storable($db);
 
 $hasSession = isset($_GET['session']);
 
 $app = $hasSession ?
-        \Fxrm\Store\Storable::implement('\\TodoApp\\LoggedInApplication', $db, $_GET['session']) :
-        \Fxrm\Store\Storable::implement('\\TodoApp\\Application', $db);
+        $storable->implement('\\TodoApp\\LoggedInApplication', $_GET['session']) :
+        $storable->implement('\\TodoApp\\Application');
 
 \Fxrm\Action\Handler::invoke($app, function ($className, $v) use($app) {
     if ($className === 'TodoApp\\Email') {
