@@ -8,9 +8,11 @@ $db = new \Fxrm\Store\SQLiteBackend('sqlite:test.db');
 
 $hasSession = isset($_GET['session']);
 
+$sm = \Fxrm\Store\Storable::implement('\\Fxrm\\Authentication\\SessionManager', $db);
+
 $app = $hasSession ?
-        \Fxrm\Store\Storable::implement('\\TodoApp\\LoggedInApplication', $db, $_GET['session']) :
-        \Fxrm\Store\Storable::implement('\\TodoApp\\Application', $db);
+        \Fxrm\Store\Storable::implement('\\TodoApp\\LoggedInService', $db, $sm, $_GET['session']) :
+        \Fxrm\Store\Storable::implement('\\TodoApp\\UserLoginService', $db, $sm);
 
 \Fxrm\Action\Handler::invoke($app, function ($className, $v) use($app) {
     if ($className === 'TodoApp\\Email') {

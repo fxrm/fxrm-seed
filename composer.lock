@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4645a4db738242ef0c967106c2d95ddb",
+    "hash": "7b2a50ce5602000bb5cb1802dc5448ab",
     "packages": [
         {
             "name": "fxrm/action",
@@ -44,12 +44,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unframework/fxrm-store.git",
-                "reference": "4c8e9faef9312d9db86383e048355c2bc30946ea"
+                "reference": "5252bd113847ab4700f63c911346617d0fb43771"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unframework/fxrm-store/zipball/4c8e9faef9312d9db86383e048355c2bc30946ea",
-                "reference": "4c8e9faef9312d9db86383e048355c2bc30946ea",
+                "url": "https://api.github.com/repos/unframework/fxrm-store/zipball/5252bd113847ab4700f63c911346617d0fb43771",
+                "reference": "5252bd113847ab4700f63c911346617d0fb43771",
                 "shasum": ""
             },
             "type": "library",
@@ -69,7 +69,46 @@
                 "source": "https://github.com/unframework/fxrm-store/tree/master",
                 "issues": "https://github.com/unframework/fxrm-store/issues"
             },
-            "time": "2013-06-08 04:58:04"
+            "time": "2013-06-08 05:58:11"
+        },
+        {
+            "name": "ircmaxell/password-compat",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ircmaxell/password_compat.git",
+                "reference": "6925da603b31bfff9488480c0a9db48a0feeadf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ircmaxell/password_compat/zipball/6925da603b31bfff9488480c0a9db48a0feeadf1",
+                "reference": "6925da603b31bfff9488480c0a9db48a0feeadf1",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/password.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@php.net",
+                    "homepage": "http://blog.ircmaxell.com"
+                }
+            ],
+            "description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
+            "homepage": "https://github.com/ircmaxell/password_compat",
+            "keywords": [
+                "hashing",
+                "password"
+            ],
+            "time": "2013-05-10 11:19:13"
         }
     ],
     "packages-dev": [
@@ -80,6 +119,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "ircmaxell/password-compat": 20,
         "fxrm/action": 20,
         "fxrm/store": 20
     },

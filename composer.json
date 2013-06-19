@@ -8,10 +8,12 @@
     ],
     "autoload": {
         "psr-0": {
+            "Fxrm": "src/",
             "TodoApp": "src/"
         }
     },
     "require": {
+        "ircmaxell/password-compat": "dev-master",
         "fxrm/action": "dev-master",
         "fxrm/store": "dev-master"
     },
