@@ -7,7 +7,7 @@ require(__DIR__ . '/vendor/autoload.php');
 $db = new \Fxrm\Store\SQLiteBackend('sqlite:test.db');
 $app = \Fxrm\Store\Storable::implement('\\TodoApp\\LoggedInApplication', $db, $_GET['session']);
 
-var_dump($app->queryAllUsers());
+var_dump($app->findAllUsers());
 
 $form = new \Fxrm\Action\Form($app, 'setEmail');
 

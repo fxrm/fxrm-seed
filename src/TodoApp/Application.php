@@ -17,10 +17,7 @@ abstract class Application {
 
     abstract function setUserLastSession(UserId $userId, SessionId $lastSessionId);
 
-    /**
-     * @return SessionId
-     */
-    abstract function createSession($key, UserId $userId, $createdTime);
+    abstract function initializeSession(SessionId $session, $key, UserId $userId, $createdTime);
 
     function checkUserPassword(UserId $userId, $password) {
         return $this->getUserPasswordHash($userId) === '$md5$' . md5($password);
@@ -35,8 +32,9 @@ abstract class Application {
         }
 
         // create the session with a crypto-secure random key (printable, to ease debugging)
+        $sessionId = new SessionId();
         $sessionKey = base64_encode(openssl_random_pseudo_bytes(18));
-        $sessionId = $this->createSession($sessionKey, $userId, time());
+        $this->initializeSession($sessionId, $sessionKey, $userId, time());
 
         $this->setUserLastSession($userId, $sessionId);
 

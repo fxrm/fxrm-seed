@@ -18,7 +18,7 @@ abstract class LoggedInApplication extends \TodoApp\Application {
     /**
      * @return object[]
      */
-    abstract function queryAllUsers();
+    abstract function findAllUsers();
 
     private $currentUserId;
 
