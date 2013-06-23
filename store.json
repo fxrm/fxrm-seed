@@ -3,7 +3,10 @@
         "TodoApp\\UserId": "default",
         "TodoApp\\SessionId": "default"
     },
+
     "valueClasses": [ "TodoApp\\Email" ],
+
+    "defaultBackend": "default",
 
     "backends": {
         "default": [ "Fxrm\\Store\\SQLiteBackend", "sqlite:test.db" ]

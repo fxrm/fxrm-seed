@@ -12,13 +12,14 @@ $app = $hasSession ?
         $storable->implement('\\TodoApp\\LoggedInApplication', $_GET['session']) :
         $storable->implement('\\TodoApp\\Application');
 
-\Fxrm\Action\Handler::invoke($app, function ($className, $v) use($app) {
+\Fxrm\Action\Handler::invoke($app, function ($className, $v) use($storable) {
+    // @todo check e.g. common superclass or something: this is not always one-to-one with Store value objects
     if ($className === 'TodoApp\\Email') {
         return new \TodoApp\Email($v);
     }
 
-    return \Fxrm\Store\Environment::intern($app, $className, $v);
-}, function ($v) use($app) {
+    return $storable->intern($className, $v);
+}, function ($v) use($storable) {
     // serialize app exceptions as their class names
     if ($v instanceof \Exception) {
         $exceptionClass = get_class($v);
@@ -31,7 +32,7 @@ $app = $hasSession ?
         return substr(get_class($v), 8);
     }
 
-    return \Fxrm\Store\Environment::extern($app, $v);
+    return $storable->extern($v);
 });
 
 ?>
