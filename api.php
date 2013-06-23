@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 require(__DIR__ . '/vendor/autoload.php');
 
 $db = new \Fxrm\Store\SQLiteBackend('sqlite:test.db');
-$storable = new \Fxrm\Store\Storable($db);
+$storable = new \Fxrm\Store\Storable($db, 'store.json');
 
 $hasSession = isset($_GET['session']);
 

@@ -1,0 +1,7 @@
+{
+    "idClasses": {
+        "TodoApp\\UserId": "default",
+        "TodoApp\\SessionId": "default"
+    },
+    "valueClasses": [ "TodoApp\\Email" ]
+}
