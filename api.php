@@ -4,8 +4,7 @@ ini_set('display_errors', 1);
 
 require(__DIR__ . '/vendor/autoload.php');
 
-$db = new \Fxrm\Store\SQLiteBackend('sqlite:test.db');
-$storable = new \Fxrm\Store\Storable($db, 'store.json');
+$storable = new \Fxrm\Store\Environment('store.json');
 
 $hasSession = isset($_GET['session']);
 
@@ -18,7 +17,7 @@ $app = $hasSession ?
         return new \TodoApp\Email($v);
     }
 
-    return \Fxrm\Store\Storable::intern($app, $className, $v);
+    return \Fxrm\Store\Environment::intern($app, $className, $v);
 }, function ($v) use($app) {
     // serialize app exceptions as their class names
     if ($v instanceof \Exception) {
@@ -32,7 +31,7 @@ $app = $hasSession ?
         return substr(get_class($v), 8);
     }
 
-    return \Fxrm\Store\Storable::extern($app, $v);
+    return \Fxrm\Store\Environment::extern($app, $v);
 });
 
 ?>
