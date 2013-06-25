@@ -12,6 +12,11 @@ class BasicUserInfo {
      * @var Email
      */
     public $email;
+
+    /**
+     * @var \DateTime
+     */
+    public $lastLoginTime;
 }
 
 ?>
