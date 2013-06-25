@@ -16,7 +16,7 @@ abstract class LoggedInApplication extends \TodoApp\Application {
     abstract function setUserEmail(UserId $userId, Email $email);
 
     /**
-     * @return object[]
+     * @return BasicUserInfo[]
      */
     abstract function findAllUsers();
 

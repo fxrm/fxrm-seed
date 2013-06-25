@@ -1,4 +1,8 @@
 {
+    "backends": {
+        "default": [ "Fxrm\\Store\\SQLiteBackend", "sqlite:test.db" ]
+    },
+
     "idClasses": {
         "TodoApp\\UserId": "default",
         "TodoApp\\SessionId": "default"
@@ -6,9 +10,7 @@
 
     "valueClasses": [ "TodoApp\\Email" ],
 
-    "defaultBackend": "default",
-
-    "backends": {
-        "default": [ "Fxrm\\Store\\SQLiteBackend", "sqlite:test.db" ]
+    "methods": {
+        "TodoApp\\LoggedInApplication\\findAllUsers": "default"
     }
 }

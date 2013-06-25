@@ -44,12 +44,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unframework/fxrm-store.git",
-                "reference": "010b7004608c7c1f76871571147d7318ab066eb4"
+                "reference": "82525303b16b282da0c5a724c5b987604a43fe31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unframework/fxrm-store/zipball/010b7004608c7c1f76871571147d7318ab066eb4",
-                "reference": "010b7004608c7c1f76871571147d7318ab066eb4",
+                "url": "https://api.github.com/repos/unframework/fxrm-store/zipball/82525303b16b282da0c5a724c5b987604a43fe31",
+                "reference": "82525303b16b282da0c5a724c5b987604a43fe31",
                 "shasum": ""
             },
             "type": "library",
@@ -69,7 +69,7 @@
                 "source": "https://github.com/unframework/fxrm-store/tree/master",
                 "issues": "https://github.com/unframework/fxrm-store/issues"
             },
-            "time": "2013-06-23 05:02:31"
+            "time": "2013-06-25 03:36:07"
         }
     ],
     "packages-dev": [
