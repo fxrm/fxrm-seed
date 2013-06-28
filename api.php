@@ -18,7 +18,7 @@ $app = $hasSession ?
         return new \TodoApp\Email($v);
     }
 
-    return $storable->intern($className, $v);
+    return $storable->import($className, $v);
 }, function ($v) use($storable) {
     // serialize app exceptions as their class names
     if ($v instanceof \Exception) {
@@ -32,7 +32,7 @@ $app = $hasSession ?
         return substr(get_class($v), 8);
     }
 
-    return $storable->extern($v);
+    return $storable->export($v);
 });
 
 ?>
