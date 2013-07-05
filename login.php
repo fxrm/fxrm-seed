@@ -8,14 +8,14 @@ $storable = new \Fxrm\Store\Environment('store.json');
 
 $app = $storable->implement('\\TodoApp\\Application');
 
-$form = new \Fxrm\Action\Form($app, 'login');
+$form = new \Fxrm\Action\Form('login', 'api.php/login', $app, 'login');
 
 if ($form->hasReturnValue()) {
     header('Location: ' . 'index.php?session=' . urlencode($form->getReturnValue()));
     return;
 }
 
-$form->start('api.php');
+$form->start();
 
 echo '<p>';
 echo $form->getActionError();

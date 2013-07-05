@@ -12,7 +12,10 @@ $app = $hasSession ?
         $storable->implement('\\TodoApp\\LoggedInApplication', $_GET['session']) :
         $storable->implement('\\TodoApp\\Application');
 
-\Fxrm\Action\Handler::invoke($app, function ($className, $v) use($storable) {
+// get the method corresponding to current route
+$methodName = isset($_SERVER['PATH_INFO']) ? substr($_SERVER['PATH_INFO'], 1) : '';
+
+\Fxrm\Action\Handler::invoke($app, $methodName, function ($className, $v) use($storable) {
     // @todo check e.g. common superclass or something: this is not always one-to-one with Store value objects
     if ($className === 'TodoApp\\Email') {
         return new \TodoApp\Email($v);

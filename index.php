@@ -10,13 +10,13 @@ $app = $storable->implement('\\TodoApp\\LoggedInApplication', $_GET['session']);
 
 var_dump($app->findAllUsers());
 
-$form = new \Fxrm\Action\Form($app, 'setEmail');
+$form = new \Fxrm\Action\Form('setEmail', 'api.php/setEmail?session=' . urlencode($_GET['session']), $app, 'setEmail');
 
 if ($form->hasReturnValue()) {
     echo '<p>User information updated!</p>';
 }
 
-$form->start('api.php?session=' . urlencode($_GET['session']));
+$form->start();
 
 echo '<p>' . htmlspecialchars($form->getActionError()) . '</p>';
 
