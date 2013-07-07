@@ -8,11 +8,11 @@ $storable = new \Fxrm\Store\Environment('store.json');
 $ctxInit = include(__DIR__ . '/context.php');
 $ctx = $ctxInit($storable);
 
-$app = $storable->implement('\\TodoApp\\LoggedInApplication', $_GET['session']);
+$handler = $ctx->createHandler('\\TodoApp\\LoggedInApplication');
 
-var_dump($app->findAllUsers());
+var_dump($handler->getInstance()->findAllUsers());
 
-$form = $ctx->createForm('setEmail', 'api.php/setEmail?session=' . urlencode($_GET['session']), $app, 'setEmail');
+$form = $handler->createForm('api.php/setEmail?session=' . urlencode($_GET['session']), 'setEmail');
 
 if ($form->hasReturnValue()) {
     echo '<p>User information updated!</p>';

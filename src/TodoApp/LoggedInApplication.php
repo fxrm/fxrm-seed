@@ -22,8 +22,8 @@ abstract class LoggedInApplication extends \TodoApp\Application {
 
     private $currentUserId;
 
-    function __construct($sessionKey) {
-        $sessionId = $this->findSessionByKey($sessionKey);
+    function __construct($session) {
+        $sessionId = $this->findSessionByKey($session);
 
         // @todo validate session expiry
         if ( ! $sessionId) {
