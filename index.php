@@ -12,7 +12,7 @@ $handler = $ctx->createHandler('\\TodoApp\\LoggedInApplication');
 
 var_dump($handler->getInstance()->findAllUsers());
 
-$form = $handler->createForm('api.php/setEmail?session=' . urlencode($_GET['session']), 'setEmail');
+$form = $handler->createForm('api.php/setEmail', 'setEmail');
 
 if ($form->hasReturnValue()) {
     echo '<p>User information updated!</p>';
