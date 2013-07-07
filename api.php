@@ -5,6 +5,8 @@ ini_set('display_errors', 1);
 require(__DIR__ . '/vendor/autoload.php');
 
 $storable = new \Fxrm\Store\Environment('store.json');
+$ctxInit = include(__DIR__ . '/context.php');
+$ctx = $ctxInit($storable);
 
 $hasSession = isset($_GET['session']);
 
@@ -15,7 +17,9 @@ $app = $hasSession ?
 // get the method corresponding to current route
 $methodName = isset($_SERVER['PATH_INFO']) ? substr($_SERVER['PATH_INFO'], 1) : '';
 
-\Fxrm\Action\Handler::invoke($app, $methodName, function ($className, $v) use($storable) {
+$handler = $ctx->createHandler();
+
+$handler->invoke($app, $methodName, function ($className, $v) use($storable) {
     // @todo check e.g. common superclass or something: this is not always one-to-one with Store value objects
     if ($className === 'TodoApp\\Email') {
         return new \TodoApp\Email($v);

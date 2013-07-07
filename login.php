@@ -5,10 +5,12 @@ ini_set('display_errors', 1);
 require(__DIR__ . '/vendor/autoload.php');
 
 $storable = new \Fxrm\Store\Environment('store.json');
+$ctxInit = include(__DIR__ . '/context.php');
+$ctx = $ctxInit($storable);
 
 $app = $storable->implement('\\TodoApp\\Application');
 
-$form = new \Fxrm\Action\Form('login', 'api.php/login', $app, 'login');
+$form = $ctx->createForm('login', 'api.php/login', $app, 'login');
 
 if ($form->hasReturnValue()) {
     header('Location: ' . 'index.php?session=' . urlencode($form->getReturnValue()));

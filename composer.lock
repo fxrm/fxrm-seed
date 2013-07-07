@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unframework/fxrm-action.git",
-                "reference": "beb1d83b7020b26ac2d958e773b2d8d9575d7cb8"
+                "reference": "c447a77dc491793875cd6c663907680b48b9b709"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unframework/fxrm-action/zipball/beb1d83b7020b26ac2d958e773b2d8d9575d7cb8",
-                "reference": "beb1d83b7020b26ac2d958e773b2d8d9575d7cb8",
+                "url": "https://api.github.com/repos/unframework/fxrm-action/zipball/c447a77dc491793875cd6c663907680b48b9b709",
+                "reference": "c447a77dc491793875cd6c663907680b48b9b709",
                 "shasum": ""
             },
             "type": "library",
@@ -36,7 +36,7 @@
                 "source": "https://github.com/unframework/fxrm-action/tree/master",
                 "issues": "https://github.com/unframework/fxrm-action/issues"
             },
-            "time": "2013-07-05 02:06:33"
+            "time": "2013-07-07 01:21:21"
         },
         {
             "name": "fxrm/store",
