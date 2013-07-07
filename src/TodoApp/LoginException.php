@@ -2,6 +2,6 @@
 
 namespace TodoApp;
 
-class LoginException extends \Exception {}
+class LoginException extends ApplicationException {}
 
 ?>

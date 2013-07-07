@@ -2,7 +2,7 @@
 
 namespace TodoApp;
 
-class NotLoggedInException extends \Exception {
+class NotLoggedInException extends ApplicationException {
 }
 
 ?>

@@ -2,7 +2,7 @@
 
 namespace TodoApp;
 
-class EmailFormatException extends \Exception {
+class EmailFormatException extends ApplicationException {
 }
 
 ?>
