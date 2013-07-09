@@ -20,9 +20,11 @@ abstract class LoggedInApplication extends \TodoApp\Application {
      */
     abstract function findAllUsers();
 
-    private $currentUserId;
+    private $currentUserId, $session;
 
     function __construct($session) {
+        $this->session = $session;
+
         $sessionId = $this->findSessionByKey($session);
 
         // @todo validate session expiry
@@ -31,6 +33,10 @@ abstract class LoggedInApplication extends \TodoApp\Application {
         }
 
         $this->currentUserId = $this->getSessionUserId($sessionId);
+    }
+
+    function getSession() {
+        return $this->session;
     }
 
     function setEmail(Email $email) {

@@ -10,13 +10,13 @@ $ctx = $ctxInit($storable);
 
 $hasSession = isset($_GET['session']);
 
-$handler = $hasSession ?
-        $ctx->createHandler('\\TodoApp\\LoggedInApplication') :
-        $ctx->createHandler('\\TodoApp\\Application');
+$service = $hasSession ?
+        $ctx->createService('\\TodoApp\\LoggedInApplication') :
+        $ctx->createService('\\TodoApp\\Application');
 
 // get the method corresponding to current route
 $methodName = isset($_SERVER['PATH_INFO']) ? substr($_SERVER['PATH_INFO'], 1) : '';
 
-$handler->invoke($methodName);
+$service->invoke($methodName);
 
 ?>

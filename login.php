@@ -8,9 +8,9 @@ $storable = new \Fxrm\Store\Environment('store.json');
 $ctxInit = include(__DIR__ . '/context.php');
 $ctx = $ctxInit($storable);
 
-$handler = $ctx->createHandler('\\TodoApp\\Application');
+$service = $ctx->createService('\\TodoApp\\Application');
 
-$form = $handler->createForm('api.php/login', 'login');
+$form = $service->createForm('api.php/login', array(), 'login');
 
 if ($form->hasReturnValue()) {
     header('Location: ' . 'index.php?session=' . urlencode($form->getReturnValue()));
