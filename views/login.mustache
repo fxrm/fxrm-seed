@@ -1,17 +1,11 @@
 
 {{#loginForm}}
-    {{#success}}
-        <p>Logged in successfully. <a href="">Redirect link {{value}}</a></p>
-    {{/success}}
+    <form action="{{url}}" method="post">
+        {{#error}}<p><b>{{.}}</b></p>{{/error}}
 
-    {{^success}}
-        <form action="{{url}}" method="post">
-            {{#error}}<p><b>{{.}}</b></p>{{/error}}
+        {{#email}}<label>Email <input type="text" name="{{inputName}}" value="{{inputValue}}" /></label>{{/email}}
+        {{#password:private}}<label>Password <input type="password" name="{{inputName}}" /></label>{{/password:private}}
 
-            {{#email}}<label>Email <input type="text" name="{{inputName}}" value="{{inputValue}}" /></label>{{/email}}
-            {{#password:private}}<label>Password <input type="password" name="{{inputName}}" /></label>{{/password:private}}
-
-            <button type="submit">Login</button>
-        </form>
-    {{/success}}
+        <button type="submit">Login</button>
+    </form>
 {{/loginForm}}
