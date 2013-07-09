@@ -14,7 +14,7 @@ $app = $service->createInstance();
 
 var_dump($app->findAllUsers());
 
-$form = $service->createForm('api.php/setEmail', array('session' => $app->getSession()), 'setEmail');
+$form = new \Fxrm\Action\Form($service, 'api.php/setEmail', array('session' => $app->getSession()), 'setEmail');
 
 if ($form->hasReturnValue()) {
     echo '<p>User information updated!</p>';

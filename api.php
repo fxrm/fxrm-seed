@@ -17,6 +17,6 @@ $service = $hasSession ?
 // get the method corresponding to current route
 $methodName = isset($_SERVER['PATH_INFO']) ? substr($_SERVER['PATH_INFO'], 1) : '';
 
-$service->invoke($methodName);
+\Fxrm\Action\Form::invoke($service, $methodName);
 
 ?>

@@ -10,7 +10,7 @@ $ctx = $ctxInit($storable);
 
 $service = $ctx->createService('\\TodoApp\\Application');
 
-$form = $service->createForm('api.php/login', array(), 'login');
+$form = new \Fxrm\Action\Form($service, 'api.php/login', array(), 'login');
 
 if ($form->hasReturnValue()) {
     header('Location: ' . 'index.php?session=' . urlencode($form->getReturnValue()));
