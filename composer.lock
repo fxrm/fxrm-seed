@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4645a4db738242ef0c967106c2d95ddb",
+    "hash": "678d48705f8dddf141623592861b1a56",
     "packages": [
         {
             "name": "fxrm/action",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unframework/fxrm-action.git",
-                "reference": "6e9c033e9492c4538f8f4dd697bc5c09f7316656"
+                "reference": "729e1819df6d777027f7c8ef9f497cf0e2f3dcab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unframework/fxrm-action/zipball/6e9c033e9492c4538f8f4dd697bc5c09f7316656",
-                "reference": "6e9c033e9492c4538f8f4dd697bc5c09f7316656",
+                "url": "https://api.github.com/repos/unframework/fxrm-action/zipball/729e1819df6d777027f7c8ef9f497cf0e2f3dcab",
+                "reference": "729e1819df6d777027f7c8ef9f497cf0e2f3dcab",
                 "shasum": ""
             },
             "type": "library",
@@ -36,7 +36,7 @@
                 "source": "https://github.com/unframework/fxrm-action/tree/master",
                 "issues": "https://github.com/unframework/fxrm-action/issues"
             },
-            "time": "2013-07-09 12:30:44"
+            "time": "2013-07-09 22:18:03"
         },
         {
             "name": "fxrm/store",
@@ -70,6 +70,48 @@
                 "issues": "https://github.com/unframework/fxrm-store/issues"
             },
             "time": "2013-07-07 16:16:18"
+        },
+        {
+            "name": "mustache/mustache",
+            "version": "v2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bobthecow/mustache.php.git",
+                "reference": "v2.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/v2.3.1",
+                "reference": "v2.3.1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mustache": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Hileman",
+                    "email": "justin@justinhileman.info",
+                    "homepage": "http://justinhileman.com"
+                }
+            ],
+            "description": "A Mustache implementation in PHP.",
+            "homepage": "https://github.com/bobthecow/mustache.php",
+            "keywords": [
+                "mustache",
+                "templating"
+            ],
+            "time": "2013-04-25 15:23:30"
         }
     ],
     "packages-dev": [

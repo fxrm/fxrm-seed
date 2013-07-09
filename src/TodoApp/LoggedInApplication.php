@@ -16,6 +16,11 @@ abstract class LoggedInApplication extends \TodoApp\Application {
     abstract function setUserEmail(UserId $userId, Email $email);
 
     /**
+     * @return Email
+     */
+    abstract function getUserEmail(UserId $userId);
+
+    /**
      * @return BasicUserInfo[]
      */
     abstract function findAllUsers();
@@ -37,6 +42,10 @@ abstract class LoggedInApplication extends \TodoApp\Application {
 
     function getSession() {
         return $this->session;
+    }
+
+    function getEmail() {
+        return $this->getUserEmail($this->currentUserId);
     }
 
     function setEmail(Email $email) {

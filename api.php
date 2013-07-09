@@ -4,9 +4,7 @@ ini_set('display_errors', 1);
 
 require(__DIR__ . '/vendor/autoload.php');
 
-$storable = new \Fxrm\Store\Environment('store.json');
-$ctxInit = include(__DIR__ . '/context.php');
-$ctx = $ctxInit($storable);
+$ctx = include(__DIR__ . '/context.php');
 
 $hasSession = isset($_GET['session']);
 

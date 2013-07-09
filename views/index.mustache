@@ -1,0 +1,19 @@
+
+{{#setEmailForm}}
+    {{#success}}
+        <p>User email changed successfully!</p>
+    {{/success}}
+
+    <form action="{{url}}" method="post">
+        {{#error}}<p><b>{{.}}</b></p>{{/error}}
+
+        {{#email}}
+            <label>
+                User Email
+                <input type="text" name="{{inputName}}" value="{{inputValue}}" />
+                {{#error}}<b>{{.}}</b>{{/error}}
+            </label>
+        {{/email}}
+        <button type="submit">Set Email</button>
+    </form>
+{{/setEmailForm}}
