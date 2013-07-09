@@ -17,12 +17,11 @@ if ($loginForm->getSuccessStatus()) {
 
 $mustache = new Mustache_Engine(array(
     'strict_callables' => true,
-    'loader' => new Mustache_Loader_FilesystemLoader(__DIR__ . '/views'),
-    'helpers' => array(
-        'loginForm' => new \Fxrm\Mustache\FormHelper($loginForm)
-    )
+    'loader' => new Mustache_Loader_FilesystemLoader(__DIR__ . '/views')
 ));
 
-echo $mustache->render('login');
+echo $mustache->render('login', array(
+    'loginForm' => new \Fxrm\Mustache\FormHelper($loginForm)
+));
 
 ?>

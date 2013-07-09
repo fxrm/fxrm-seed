@@ -16,12 +16,11 @@ var_dump($app->findAllUsers());
 
 $mustache = new Mustache_Engine(array(
     'strict_callables' => true,
-    'loader' => new Mustache_Loader_FilesystemLoader(__DIR__ . '/views'),
-    'helpers' => array(
-        'setEmailForm' => new \Fxrm\Mustache\FormHelper($setEmailForm, array('email' => $app->getEmail()))
-    )
+    'loader' => new Mustache_Loader_FilesystemLoader(__DIR__ . '/views')
 ));
 
-echo $mustache->render('index');
+echo $mustache->render('index', array(
+    'setEmailForm' => new \Fxrm\Mustache\FormHelper($setEmailForm, array('email' => $app->getEmail()))
+));
 
 ?>
