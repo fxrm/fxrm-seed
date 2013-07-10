@@ -1,10 +1,10 @@
 
 {{#loginForm}}
     <form action="{{url}}" method="post">
-        {{#error}}<p><b>{{.}}</b></p>{{/error}}
+        {{#formError}}<p><b>{{.}}</b></p>{{/formError}}
 
-        {{#email}}<label>Email <input type="text" name="{{inputName}}" value="{{inputValue}}" /></label>{{/email}}
-        {{#password:private}}<label>Password <input type="password" name="{{inputName}}" /></label>{{/password:private}}
+        {{#email}} {{#label}}Email{{/label}} {{>form/text}} {{/email}}
+        {{#password}} {{#label}}Password{{/label}} {{>form/password}} {{/password}}
 
         <button type="submit">Login</button>
     </form>

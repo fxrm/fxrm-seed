@@ -1,19 +1,12 @@
 
 {{#setEmailForm}}
-    {{#success}}
+    {{#formSuccess}}
         <p>User email changed successfully!</p>
-    {{/success}}
+    {{/formSuccess}}
 
     <form action="{{url}}" method="post">
-        {{#error}}<p><b>{{.}}</b></p>{{/error}}
-
-        {{#email}}
-            <label>
-                User Email
-                <input type="text" name="{{inputName}}" value="{{inputValue}}" />
-                {{#error}}<b>{{.}}</b>{{/error}}
-            </label>
-        {{/email}}
+        {{#formError}}<p><b>{{.}}</b></p>{{/formError}}
+        {{#email}} {{#label}}User Email{{/label}} {{>form/text}} {{/email}}
         <button type="submit">Set Email</button>
     </form>
 {{/setEmailForm}}
