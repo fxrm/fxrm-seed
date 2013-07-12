@@ -4,11 +4,9 @@ ini_set('display_errors', 1);
 
 require(__DIR__ . '/vendor/autoload.php');
 
-$ctx = include(__DIR__ . '/context.php');
+$ctx = new TodoApp\ActionContext();
 
-$service = $ctx->createService('\\TodoApp\\Application');
-
-$loginForm = new \Fxrm\Action\Form($service, 'api.php/login', array(), 'login');
+$loginForm = new \Fxrm\Action\Form($ctx, 'api.php/login', 'TodoApp\\Application', 'login');
 
 if ($loginForm->getSuccessStatus()) {
     header('Location: ' . 'index.php?session=' . urlencode($loginForm->getSuccessValue()));

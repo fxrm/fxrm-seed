@@ -4,13 +4,10 @@ ini_set('display_errors', 1);
 
 require(__DIR__ . '/vendor/autoload.php');
 
-$ctx = include(__DIR__ . '/context.php');
+$ctx = new \TodoApp\ActionContext();
+$app = $ctx->getStore()->implement('\\TodoApp\\LoggedInApplication', $_GET['session']);
 
-$service = $ctx->createService('\\TodoApp\\LoggedInApplication');
-
-$app = $service->createInstance();
-
-$setEmailForm = new \Fxrm\Action\Form($service, 'api.php/setEmail', array('session' => $app->getSession()), 'setEmail');
+$setEmailForm = new \Fxrm\Action\Form($ctx, 'api.php/setEmail?session=' . rawurlencode($_GET['session']), 'TodoApp\\LoggedInApplication', 'setEmail');
 
 var_dump($app->findAllUsers());
 
