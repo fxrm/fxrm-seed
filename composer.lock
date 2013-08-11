@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/unframework/fxrm-action.git",
-                "reference": "039829806cd124618b798e007b16ee1ac3d276f8"
+                "reference": "63589b987127b859ba8fcbff4900669c2a6d3af5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unframework/fxrm-action/zipball/039829806cd124618b798e007b16ee1ac3d276f8",
-                "reference": "039829806cd124618b798e007b16ee1ac3d276f8",
+                "url": "https://api.github.com/repos/unframework/fxrm-action/zipball/63589b987127b859ba8fcbff4900669c2a6d3af5",
+                "reference": "63589b987127b859ba8fcbff4900669c2a6d3af5",
                 "shasum": ""
             },
             "type": "library",
@@ -36,7 +36,7 @@
                 "source": "https://github.com/unframework/fxrm-action/tree/master",
                 "issues": "https://github.com/unframework/fxrm-action/issues"
             },
-            "time": "2013-07-10 02:50:58"
+            "time": "2013-07-12 03:22:38"
         },
         {
             "name": "fxrm/store",
@@ -73,16 +73,16 @@
         },
         {
             "name": "mustache/mustache",
-            "version": "v2.3.1",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "v2.3.1"
+                "reference": "v2.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/v2.4.0",
+                "reference": "v2.4.0",
                 "shasum": ""
             },
             "require": {
@@ -111,7 +111,7 @@
                 "mustache",
                 "templating"
             ],
-            "time": "2013-04-25 15:23:30"
+            "time": "2013-07-18 05:23:52"
         }
     ],
     "packages-dev": [
