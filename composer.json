@@ -16,6 +16,9 @@
         "fxrm/action": "dev-master",
         "fxrm/store": "dev-master"
     },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
     "repositories": [
         { "type": "vcs", "url": "git@github.com:unframework/fxrm-action.git" },
         { "type": "vcs", "url": "git@github.com:unframework/fxrm-store.git" }
